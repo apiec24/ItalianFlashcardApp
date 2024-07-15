@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { italian: 'Ciao', english: 'Hello' },
       { italian: 'Amore', english: 'Love' },
       { italian: 'Gatto', english: 'Cat' },
-      { italian: 'Cane', english: 'Dog' },git 
+      { italian: 'Cane', english: 'Dog' }, 
       { italian: 'Famiglia', english: 'Family' },
       { italian: 'Scuola', english: 'School' },
       { italian: 'Libro', english: 'Book' },
@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     flipButton.addEventListener('click', () => {
       flashcard.classList.toggle('flipped');
-      updateFlashcard
       clickCount += 1;
       if(clickCount%2 == 0){
         flipButton.innerHTML = "in l'Italiano"
@@ -56,12 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }else if(clickCount%2 == 1){
         flipButton.innerHTML = "English"
       };
+      updateFlashcard();
     });
 
     nextButton.addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % vocabulary.length;
       updateFlashcard();
       flashcard.classList.remove('flipped');
+      clickCount = 1
+      flipButton.innerHTML = "English"
     });
   
     // Initial display

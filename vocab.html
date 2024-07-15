@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocabulary Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="vocab.html" class="active">Vocabulary</a></li>
+        <li><a href="grammar.html">Grammar</a></li>
+        <li><a href="qa.html">Q&A</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="content">
+    <nav class="sort-buttons">
+      <button id="show-all">Show All</button>
+      <button id="show-understand">Show Understood</button>
+      <button id="show-practice">Show Need Practice</button>
+    </nav>
+    <div class="flashcard-container">
+      <div class="flashcard">
+        <div class="front">Ciao</div>
+        <div class="back">Hello</div>
+      </div>
+      <div class="horizontal-buttons">
+        <button id="back-button">Back</button>
+        <button id="flip-button">English</button>
+        <button id="next-button">Next</button>
+      </div>
+    </div>
+    <nav class="vertical-buttons">
+      <button id="understand-button">I Understand</button>
+      <button id="practice-button">Need Practice</button>
+    </nav>
+    <div class="vocabulary-list">
+      <!-- Vocabulary items will be displayed here -->
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

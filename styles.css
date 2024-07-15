@@ -1,55 +1,204 @@
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+/* Basic Styles */
+body, html {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Use border-box sizing model */
+    width: 100%; /* Set width to 100% of viewport */
+    height: 100%; /* Set height to 100% of viewport */
+    font-family: Arial, sans-serif; /* Set default font family */
+    background-color: #e9e9e9; /* Set background color */
+  }
+  
+  header {
+    width: 100%; /* Full width header */
+    display: flex; /* Flexbox for header layout */
+    justify-content: center; /* Center content horizontally */
+    position: fixed; /* Fix header to top */
+    top: 50px; /* Space from top */
+    left: 0; /* Align to left */
+    z-index: 1000; /* Ensure header is on top */
+    background: transparent; /* Transparent background */
+  }
+  
+  .nav-bar {
+    background: #11101b; /* Dark background for navbar */
+    padding: 10px 20px; /* Padding inside navbar */
+    border-radius: 10px; /* Rounded corners */
+    display: inline-flex; /* Inline flex container */
+  }
+  
+  .nav-bar ul {
+    display: flex; /* Flexbox for list items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove list bullets */
+  }
+  
+  .nav-bar ul li a {
+    display: block; /* Block-level links */
+    align-items: center; /* Center items vertically */
+    color: #fefefe; /* White text color */
+    font-size: 20px; /* Font size */
+    padding: 10px 15px; /* Padding inside links */
+    border-radius: 50px; /* Rounded corners */
+    transition: 0.2s; /* Transition effect */
+    margin: 0 5px; /* Margin between links */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .nav-bar ul li a:hover {
+    color: #11101b; /* Text color on hover */
+    background: #fefefe; /* Background color on hover */
+  }
+  
+  .nav-bar ul li a.active {
+    color: #11101b; /* Active link text color */
+    background: #fefefe; /* Active link background color */
+  }
+  
+  .content {
+    display: flex; /* Flexbox for content layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: flex-start; /* Align items to flex-start */
+    margin-top: 200px; /* Margin to avoid overlap with header */
+    padding: 20px; /* Padding inside content */
   }
   
   .flashcard-container {
-    text-align: center;
+    text-align: center; /* Center text inside flashcard container */
+    margin: 0 20px; /* Horizontal margin to center flashcard */
   }
   
   .flashcard {
-    width: 300px;
-    height: 200px;
-    perspective: 1000px;
-    position: relative;
-    margin-bottom: 20px;
+    width: 400px; /* Flashcard width */
+    height: 275px; /* Flashcard height */
+    perspective: 1000px; /* 3D perspective */
+    position: relative; /* Relative positioning */
+    margin-bottom: 20px; /* Bottom margin */
   }
   
   .flashcard .front, .flashcard .back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: white;
-    transition: transform 0.6s;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: absolute; /* Absolute positioning */
+    backface-visibility: hidden; /* Hide back face */
+    display: flex; /* Flexbox for content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 4em; /* Font size */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: white; /* Background color */
+    transition: transform 0.6s; /* Transform transition */
   }
   
   .flashcard .back {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Rotate back face */
   }
   
   .flashcard.flipped .front {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Rotate front face on flip */
   }
   
   .flashcard.flipped .back {
-    transform: rotateY(0deg);
+    transform: rotateY(0deg); /* Rotate back face on flip */
   }
   
-  .flashcard-container button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1em;
+  .horizontal-buttons {
+    display: flex; /* Flexbox for buttons */
+    justify-content: center; /* Center buttons */
+    gap: 10px; /* Space between buttons */
   }
   
+  .horizontal-buttons button, .sort-buttons button {
+    padding: 10px 20px; /* Padding inside buttons */
+    font-size: 1em; /* Font size */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #11101b; /* Background color */
+    color: #fefefe; /* Text color */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.2s; /* Background color transition */
+  }
+  
+  .horizontal-buttons button:hover, .sort-buttons button:hover {
+    background-color: #777777; /* Background color on hover */
+  }
+  
+  .sort-buttons, .vertical-buttons {
+    display: flex; /* Flexbox for buttons */
+    flex-direction: column; /* Vertical alignment */
+    justify-content: flex-start; /* Align to flex-start */
+    align-items: center; /* Center items */
+    background: #11101b; /* Background color */
+    padding: 10px; /* Padding inside container */
+    border-radius: 10px; /* Rounded corners */
+    gap: 10px; /* Space between buttons */
+  }
+  
+  .sort-buttons {
+    position: relative; /* Fixed positioning */
+    top: 30px;
+    left: 1px;
+  }
+  
+  .vertical-buttons {
+    position: relative; /* Fixed positioning */
+    top: 50px; /* Space from top */
+    right: 1px; /* Space from right */
+  }
+  
+  .sort-buttons button, .vertical-buttons button {
+    padding: 10px 20px; /* Padding inside buttons */
+    font-size: 1em; /* Font size */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fefefe; /* Background color */
+    color: #11101b; /* Text color */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.2s, color 0.2s; /* Background and text color transition */
+  }
+  
+  .sort-buttons button:hover, .vertical-buttons button:hover {
+    background-color: #333; /* Background color on hover */
+    color: #fefefe; /* Text color on hover */
+  }
+  
+  .vocabulary-list {
+    margin-top: 20px; /* Top margin */
+  }
+  
+  .vocabulary-item {
+    padding: 10px; /* Padding inside items */
+    margin: 5px; /* Margin between items */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .understood {
+    background-color: lightgreen; /* Background color for understood items */
+  }
+  
+  .need-practice {
+    background-color: lightcoral; /* Background color for need practice items */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 800px) {
+    .sort-buttons, .vertical-buttons {
+      position: static; /* Remove fixed positioning */
+      margin: 10px auto; /* Center align in mobile */
+    }
+  
+    .content {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center items */
+    }
+  
+    .flashcard-container {
+      margin: 20px 0; /* Add vertical margin */
+    }
+  
+    .horizontal-buttons {
+      flex-direction: column; /* Stack buttons vertically */
+    }
+  }
