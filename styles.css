@@ -138,13 +138,17 @@ body, html {
   
   .sort-buttons {
     position: relative; /* Fixed positioning */
-    top: 30px;
+    top: -10px;
     left: 1px;
+  }
+  .sort-buttons button.active {
+    color: #11101b; /* Active link text color */
+    background: #ffffff; /* Active link background color */
   }
   
   .vertical-buttons {
     position: relative; /* Fixed positioning */
-    top: 50px; /* Space from top */
+    top: 80px; /* Space from top */
     right: 1px; /* Space from right */
   }
   
@@ -153,15 +157,15 @@ body, html {
     font-size: 1em; /* Font size */
     border: none; /* No border */
     border-radius: 5px; /* Rounded corners */
-    background-color: #fefefe; /* Background color */
-    color: #11101b; /* Text color */
+    background-color: #11101b; /* Background color */
+    color: #ffffff; /* Text color */
     cursor: pointer; /* Pointer cursor */
     transition: background-color 0.2s, color 0.2s; /* Background and text color transition */
   }
   
   .sort-buttons button:hover, .vertical-buttons button:hover {
-    background-color: #333; /* Background color on hover */
-    color: #fefefe; /* Text color on hover */
+    background-color: #777777; /* Background color on hover */
+    color: #ffffff; /* Text color on hover */
   }
   
   .vocabulary-list {

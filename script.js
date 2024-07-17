@@ -3,10 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.getElementById('next-button');
     const flipButton = document.getElementById('flip-button');
     const backButton = document.getElementById('back-button');
+    const buttons = document.querySelectorAll('.sort-buttons button');
   
-    const vocabulary = [
-      { italian: 'Ciao', english: 'Hello' },
-      { italian: 'Amore', english: 'Love' },
+    const nounsVocab = [
       { italian: 'Gatto', english: 'Cat' },
       { italian: 'Cane', english: 'Dog' }, 
       { italian: 'Famiglia', english: 'Family' },
@@ -15,32 +14,110 @@ document.addEventListener('DOMContentLoaded', () => {
       { italian: 'Amico', english: 'Friend' },
       { italian: 'Casa', english: 'House' },
       { italian: 'Mare', english: 'Sea' }
-      // Add more words here
     ];
-  
+
+    const verbsVocab = [
+      { italian: 'Dovere', english: 'to need'},
+      { italian: 'Andare', english: 'to go'},
+      { italian: 'Essere', english: 'to be'},
+      { italian: 'Volere', english: 'to want'},
+    ];
+
+    const adverbsVocab = [
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+    ];
+
+    const adjectivesVocab = [
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+    ];
+
+    const pronounsVocab = [
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+    ];
+
+    const phrasesVocab = [
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+      { italian: '', english: ''},
+    ];
+
+
     let currentIndex = 0;
     let clickCount = 1;
+
+
+    function getActiveVocab() {
+      const activeButton = document.querySelector('.sort-buttons .active');
+      const vocabID = activeButton.id;
+      switch(vocabID){
+        case 'nouns':
+          return nounsVocab;
+        case 'verbs':
+          return verbsVocab;
+        case 'adverbs':
+          return adverbsVocab;
+        case 'adjectives':
+          return adjectivesVocab;
+        case 'pronouns':
+          return pronounsVocab
+        case 'phrases':
+          return phrasesVocab
+        default:
+          return nounsVocab;
+      };
+    };
+
   
     function updateFlashcard() {
-      const { italian, english } = vocabulary[currentIndex];
+      const vocab = getActiveVocab();
+      const { italian, english } = vocab[currentIndex];
       const front = document.querySelector('.front');
       const back = document.querySelector('.back');
   
       front.textContent = italian;
       back.textContent = english;
-    }
+    };
   
     // flashcard.addEventListener('click', () => {
     //   flashcard.classList.toggle('flipped');
     // });
   
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove the 'active' class from all buttons
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add the 'active' class to the clicked button
+        button.classList.add('active');
+
+        currentIndex = 0;
+        updateFlashcard();
+        flashcard.classList.remove('flipped');
+        clickCount = 1;
+        flipButton.innerHTML = "English";
+      });
+    });
+
+
     backButton.addEventListener('click', () => {
+      const vocab = getActiveVocab();
       if(currentIndex!=0){
-        currentIndex = (currentIndex - 1) % vocabulary.length;
+        currentIndex = (currentIndex - 1) % vocab.length;
         updateFlashcard();
         flashcard.classList.remove('flipped');
       }else if(currentIndex==0){
-        currentIndex = (vocabulary.length - 1) % vocabulary.length;
+        currentIndex = (vocab.length - 1) % vocab.length;
         updateFlashcard();
         flashcard.classList.remove('flipped');
       };
@@ -59,7 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % vocabulary.length;
+      const vocab = getActiveVocab();
+      currentIndex = (currentIndex + 1) % vocab.length;
       updateFlashcard();
       flashcard.classList.remove('flipped');
       clickCount = 1
