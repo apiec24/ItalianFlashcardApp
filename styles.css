@@ -145,6 +145,11 @@ body, html {
     color: #11101b; /* Active link text color */
     background: #ffffff; /* Active link background color */
   }
+
+  .vertical-buttons button.active {
+    background-color: #ffffff; /* Example highlight color */
+    color: #11101b; /* Text color when active */
+  }
   
   .vertical-buttons {
     position: relative; /* Fixed positioning */
