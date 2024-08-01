@@ -17,7 +17,35 @@ document.addEventListener('DOMContentLoaded', () => {
       { italian: 'Libro', english: 'Book' },
       { italian: 'Amico', english: 'Friend' },
       { italian: 'Casa', english: 'House' },
-      { italian: 'Mare', english: 'Sea' }
+      { italian: 'Mare', english: 'Sea' },
+      { italian: 'Domani', english: 'Tomorrow' },
+      { italian: 'Yeri', english: 'Yesterday' },
+      { italian: 'Oggi', english: 'Today' },
+      { italian: 'Farmacia', english: 'Pharmacy' },
+      { italian: 'Negozio', english: 'Store' },
+      { italian: 'Mercato', english: 'Farmers Market' },
+      { italian: 'Supermercato', english: 'Grocery Store' },
+      { italian: 'Parco/Giardina', english: 'Park/Garden' },
+      { italian: 'Parcheggio', english: 'Parking Lot' },
+      { italian: 'Ospedale', english: 'Hospital' },
+      { italian: 'Chiesa', english: 'Church' },
+      { italian: 'Scuola', english: 'School' },
+      { italian: 'Banca', english: 'Bank' },
+      { italian: 'Citta', english: 'City' },
+      { italian: 'Periferia', english: 'Apartments' },
+      { italian: 'Colazione', english: 'Breakfast' },
+      { italian: 'Pranzo', english: 'Lunch' },
+      { italian: 'Cena', english: 'Dinner' },
+      { italian: 'Camicia', english: 'Shirt' },
+      { italian: 'Cena', english: 'Dinner' },
+      { italian: 'Cena', english: 'Dinner' },
+      { italian: 'Cena', english: 'Dinner' },
+      { italian: 'Cena', english: 'Dinner' },
+      { italian: 'Cena', english: 'Dinner' },
+      { italian: 'Cena', english: 'Dinner' },
+      { italian: 'Cena', english: 'Dinner' },
+      { italian: 'Cena', english: 'Dinner' },
+      { italian: 'Cena', english: 'Dinner' },
     ];
 
     const verbsVocab = [
@@ -92,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { italian: 'Tenere', english: 'to hold (irregular verb)'},
       { italian: 'Uscire', english: 'to go out (irregular verb)'},
       { italian: 'Venire', english: 'to come (irregular verb)'},
+      { italian: 'Stare', english: 'to stay (irregular verb)'},
     ];
 
     const adverbsVocab = [
